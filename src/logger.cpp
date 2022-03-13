@@ -18,20 +18,21 @@ public:
         switch (level)
         {
         case Level::INFO:
-            if (level >= Level::INFO)
+            if (logLevel >= Level::INFO)
                 printMsg("[Info] ", msg, "37");
             break;
         case Level::WARNING:
-            if (level >= Level::WARNING)
-                printMsg("[Info] ", msg, "37");
+            if (logLevel >= Level::WARNING)
+                printMsg("[Warning] ", msg, "33");
             break;
         case Level::ERROR:
-            if (level >= Level::ERROR)
-                printMsg("[Info] ", msg, "37");
+            if (logLevel >= Level::ERROR)
+                printMsg("[Error] ", msg, "31");
             break;
         default:
             break;
         }
+
     }
 
     static void setLevel(Level level)
